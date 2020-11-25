@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+  Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col  *ngFor="let bag of bags" size="3">
+        <ion-card>
+          <ion-card-header>
+            <img src={{bag.productPic}} class="photo">
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-card-title> {{bag.productName}}</ion-card-title>
+            </ion-item>
+            <ion-item>
+              <ion-card-subtitle> {{bag.productPrice}}</ion-card-subtitle>
+              <ion-button expand="block" fill="outline" routerLink="/addcart">VIEW</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+
+</ion-content>

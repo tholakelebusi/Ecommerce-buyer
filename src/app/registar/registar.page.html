@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	
+
+
+ 
+<ion-header>
+  <ion-toolbar>
+  <ion-title>
+  
+  </ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  <ion-card> 
+  <ion-card-header>
+  <ion-card-subtitle></ion-card-subtitle>
+  <ion-card-title>Registration Form</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+	
+
+		<ion-item class="centered">
+			<form>
+
+				<ion-item class="fields">
+					<ion-label>First Name</ion-label>
+						<input [(ngModel)]="name" name="name" type="string" matInput required >
+	</ion-item>
+	
+	<ion-item class="fields">
+		<ion-label>Last Name</ion-label>
+							<input [(ngModel)]="surname" name="surname"  type="string" matInput required >
+						</ion-item>
+	
+	
+	
+						<ion-item class="fields">
+							<ion-label>Age</ion-label>
+	
+		<input [(ngModel)]="age" name="age" type="text" matInput required>
+	</ion-item>
+	
+	<ion-item class="fields">
+		<ion-label>Cell Number</ion-label>
+		<input [(ngModel)]="cellNo" name="age" type="text" matInput required>
+	</ion-item>
+	
+	
+	
+	<ion-item class="fields">
+		<ion-label>Email</ion-label>
+		<input [(ngModel)]="email" name="email" type="text" matInput required>
+	</ion-item>
+	
+	<ion-item class="fields">
+		<ion-label>password</ion-label>
+	
+								<input [(ngModel)]="password" name="password" type="password" matInput required >
+							</ion-item>
+	
+							
+								<ion-button (click)="signUp()" type="submit"  id="btnn">Register</ion-button>
+								<p>
+									<a routerLink="/login" >Already a Member</a>
+									</p> 
+									<button ion-button icon-left clear small (click)="shareItem()">
+										<ion-icon name="share"></ion-icon>
+										</button>
+	
+			</form>
+		</ion-item>
+
+  </ion-card-content>
+  </ion-card>
+  </ion-content>
+</ion-content>
