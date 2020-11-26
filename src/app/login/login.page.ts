@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
   login() {
     this.loginserv.signInUser(this.email, this.password)
     this.loggonInUser = this.loginserv.signInUser
-    this.router.navigateByUrl("/")
+    this.router.navigateByUrl("/addcart")
 
   }
   resetpassword()
