@@ -14,4 +14,27 @@
   </ion-header>
 
   <app-explore-container name="Tab 2 page" ></app-explore-container>
+  <div *ngIf="viewpage">
+    <mat-card class="example-card">
+      <mat-card-header>
+        
+        <img src="{{selectedBag.productPic}}" class="photo">
+        <mat-card-title>{{selectedBag.productName}}</mat-card-title>
+        <mat-card-subtitle>{{selectedBag.productPrice}} </mat-card-subtitle>
+        <mat-card-subtitle class="decsribe">{{selectedBag.productDescrip}}</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-header>
+  
+        <mat-card-subtitle>
+          <h4>{{selectedBag.sizes}}</h4>
+        </mat-card-subtitle>
+  
+      </mat-card-header>
+    
+      <button mat-raised-button  routerLink="/update">Update</button>
+    
+      <button mat-raised-button  routerLink="/" (click)=deleting()>Delete</button>
+    </mat-card>
+  </div>
 </ion-content>
