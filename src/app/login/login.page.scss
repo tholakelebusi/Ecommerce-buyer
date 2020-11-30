@@ -4,13 +4,66 @@ ion-card
     margin-left: 8cm;
     margin-right: 16cm;
     padding: 2%;
-    color: #85144b;
-    
+    color:black;
+    font-weight: bolder;
+    width: 25cm;
+    height: 8cm;
+    background-image: url("https://i.pinimg.com/originals/99/cb/1b/99cb1b953a055f936e1daed9385a848b.jpg");
+    background-position: 100%;
+    position:center;
+    text-align: center;
 }
+
 .myview {
  //background-image: url("../../img/letsstart.jpg");
  //background-image: url("https://cdn.vox-cdn.com/thumbor/xzXrJdg2jOJzd_s4-qXp4wEpp-0=/0x0:1566x1638/1200x800/filters:focal(905x1226:1155x1476)/cdn.vox-cdn.com/uploads/chorus_image/image/66588041/Screenshot_2020_04_01_at_11.51.04_AM.0.png");
 color: yellow;
 background-color: yellowgreen;
 
+}
+
+
+$white-color:transparent;
+$height100: 100%;
+$background-image:url("https://cdn.vox-cdn.com/thumbor/xzXrJdg2jOJzd_s4-qXp4wEpp-0=/0x0:1566x1638/1200x800/filters:focal(905x1226:1155x1476)/cdn.vox-cdn.com/uploads/chorus_image/image/66588041/Screenshot_2020_04_01_at_11.51.04_AM.0.png");
+
+
+
+
+
+
+ion-button {
+    font-weight: 200;
+    background-color:#CC9900;
+    border-radius: 100%;
+    width: 32;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: $white-color;
+    }
+    ion-col {
+        border: none;
+    }
+}
+
+.letsstart
+{
+    color: yellowgreen;
+    background-color: yellowgreen;
+}
+a{
+    color:white;
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+ion-grid
+{
+    margin-left: 8cm;
+}
+ion-card-title
+{
+    margin-left: -4cm;
+    color: white;
 }

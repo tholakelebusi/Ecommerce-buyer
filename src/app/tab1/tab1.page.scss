@@ -1,6 +1,6 @@
-body
+ion-grid
 {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0zYv9-jx7wk2N6aZODT6oAFC7UgeZCgOWsg&usqp=CAU");
+  background-image: url("https://i.pinimg.com/originals/99/cb/1b/99cb1b953a055f936e1daed9385a848b.jpg");
 }
 ion-icon
 {
@@ -20,4 +20,28 @@ ion-icon
   margin-right: 0.1cm;
   height: 6cm;
   width: 5cm;
+}
+.price {
+    
+  font-style: italic;
+
+    font-size: 0.7cm;
+  
+    font-weight: bolder;
+    margin-left:0.5cm;
+    margin-bottom: 0.3cm;
+}
+ion-card
+{
+  height: 10cm;
+  width: 7cm;
+}
+
+ion-title
+{
+
+ text-align: center;
+ font-style: italic;
+ font-weight: lighter;
+ font-size: 2cm;
 }

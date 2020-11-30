@@ -16,11 +16,11 @@
 		<ion-content>
 		<ion-card> 
 		<ion-card-header>
-		<ion-card-subtitle></ion-card-subtitle>
+
 		<ion-card-title>Sign in</ion-card-title>
 		</ion-card-header>
 		<ion-card-content>
-  <ion-item class="container">
+  <!-- <ion-item class="container">
 
 
 		<ion-item class="centered">
@@ -64,10 +64,37 @@
 
 		
 		</ion-item>
-	</ion-item>
+	</ion-item> -->
 
 
 
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+				<div text-center>
+				</div>
+				<div padding>
+					<ion-item>
+						<ion-input [(ngModel)]="email" name="email" type="text" placeholder="Username"></ion-input>
+					</ion-item>
+	
+					<ion-item>
+						<ion-input [(ngModel)]="password" name="password" type="password" placeholder="Password"></ion-input>
+					</ion-item>
+				</div>
+	
+		
+					<ion-button  (click)="login()" type="submit"  id="btnn" size="medium"  expand="block" color="teal">Login</ion-button>
+					
+						<a routerLink="/resetpassword">Forgot password?</a>
+		<br>
+				
+						<a routerLink="/register">Not a member</a>
+			
+				
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 
 </ion-card-content>
 </ion-card>
