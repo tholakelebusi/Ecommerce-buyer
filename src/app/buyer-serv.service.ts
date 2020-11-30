@@ -143,24 +143,25 @@ export class BuyerServService {
   }
 
   //    this.userInfo = new Authenticate(userProfile.val().name,userProfile.val().surname,userProfile.val().email,userProfile.val().age, userProfile.val().cellNo);
-  getCurrentUser() {
-    firebase.default.auth().onAuthStateChanged((user) => {
+  getCurrentUser(){
+   
+    firebase.default.auth().onAuthStateChanged((user) =>{
       if (user) {
-        // console.log("User" + user)
+        console.log(user)
         var userId = user.uid;
-        firebase.default.database().ref('/buyer/' + userId).once('value').then(userProfile => {
-          this.userInfo =new Buyer(userProfile.val().name, userProfile.val().surname, userProfile.val().email, userProfile.val().age, userProfile.val().cellNo, userProfile.val().password)
-          console.log(this.userInfo);
-
+        firebase.default.database().ref('/users/' + userId).once('value').then( userProfile =>{
+        this.userInfo = new Buyer(userProfile.val().name,userProfile.val().surname,userProfile.val().email,userProfile.val().age, userProfile.val().cellNo,userProfile.val().password)
+        console.log(this.userInfo);
+   
         })
-      } else {
+       } else {
         console.log("user not logged in");
-
-      }
+        
+    }
     });
-
-
-
+  
+    
+    
   }
 
 
