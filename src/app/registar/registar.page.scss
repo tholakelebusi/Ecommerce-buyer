@@ -28,10 +28,33 @@ body{
 
 ion-card
 {
-    margin-top: 1cm;
-    margin-left: 8cm;
-    margin-right: 22cm;
-    padding: 2%;
-    color: #85144b;
+     margin-top: 1cm;
+     //margin-left: -6cm;
+    //margin-right: 16cm;
+    //padding: 2%;
+    color:black;
+    font-weight: bolder;
+    width: 8cm;
+    height: 13cm;
+    background-image: url("https://i.pinimg.com/originals/99/cb/1b/99cb1b953a055f936e1daed9385a848b.jpg");
+    background-position: 100%;
+    position:center;
+    text-align: center;
     
+}
+ion-button {
+    font-weight: 200;
+    background-color:#CC9900;
+    border-radius: 100%;
+    width: 32;
+}
+a{
+    color:white;
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+ion-card-title
+{
+
+    color: white;
 }

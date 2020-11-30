@@ -30,12 +30,12 @@
 
 				<ion-item class="fields">
 					<ion-label>First Name</ion-label>
-						<input [(ngModel)]="name" name="name" type="string" matInput required >
+						<ion-input [(ngModel)]="name" name="name" type="string" matInput required ></ion-input>
 	</ion-item>
 	
 	<ion-item class="fields">
 		<ion-label>Last Name</ion-label>
-							<input [(ngModel)]="surname" name="surname"  type="string" matInput required >
+							<ion-input [(ngModel)]="surname" name="surname"  type="string" matInput required ></ion-input>
 						</ion-item>
 	
 	
@@ -43,39 +43,38 @@
 						<ion-item class="fields">
 							<ion-label>Age</ion-label>
 	
-		<input [(ngModel)]="age" name="age" type="text" matInput required>
+		<ion-input [(ngModel)]="age" name="age" type="number" matInput required></ion-input>
 	</ion-item>
 	
 	<ion-item class="fields">
 		<ion-label>Cell Number</ion-label>
-		<input [(ngModel)]="cellNo" name="cellNo" type="text" matInput required>
+		<ion-input [(ngModel)]="cellNo" name="cellNo" type="text" matInput required></ion-input>
 	</ion-item>
 	
 	
 	
 	<ion-item class="fields">
 		<ion-label>Email</ion-label>
-		<input [(ngModel)]="email" name="email" type="text" matInput required>
+		<ion-input [(ngModel)]="email" name="email" type="text" matInput required></ion-input>
 	</ion-item>
 	
 	<ion-item class="fields">
 		<ion-label>password</ion-label>
 	
-								<input [(ngModel)]="password" name="password" type="password" matInput required >
+								<ion-input [(ngModel)]="password" name="password" type="password" matInput required ></ion-input>
 							</ion-item>
 	
+					
+								
 							
-								<ion-button (click)="signUp()" type="submit"  id="btnn">Register</ion-button>
-								<p>
 									<a routerLink="/login" >Already a Member</a>
-									</p> 
-									<button ion-button icon-left clear small (click)="shareItem()">
-										<ion-icon name="share"></ion-icon>
-										</button>
-	
+								 
+								
 			</form>
 		</ion-item>
-
+		<ion-button  (click)="signUp()" type="submit"  id="btnn" size="medium"  expand="block" color="teal">Register</ion-button>
+		<br>
+		<a routerLink="/login">Already a Member</a>
   </ion-card-content>
   </ion-card>
   </ion-content>

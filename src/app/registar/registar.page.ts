@@ -24,7 +24,7 @@ export class RegistarPage implements OnInit {
 
   signUp() {
 
-    this.user = new Buyer(this.name, this.surname, this.email, this.password,this.age,this.cellNo);
+    this.user = new Buyer(this.name, this.surname, this.email,this.age,this.cellNo,this.password);
     console.log(this.user);
     this.buyerService.signUpUser(this.user)
   }

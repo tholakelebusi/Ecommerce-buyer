@@ -10,7 +10,7 @@ import { Bags } from './bags'
 })
 export class BuyerServService {
 
-  userInfor: Buyer
+ // userInfor: Buyer
   selectedProduct: Bags
   userInfo: Buyer;
   constructor(private db: AngularFirestore, public afAuth: AngularFireAuth) { }
@@ -149,9 +149,11 @@ export class BuyerServService {
       if (user) {
         console.log(user)
         var userId = user.uid;
-        firebase.default.database().ref('/users/' + userId).once('value').then( userProfile =>{
-        this.userInfo = new Buyer(userProfile.val().name,userProfile.val().surname,userProfile.val().email,userProfile.val().age, userProfile.val().cellNo,userProfile.val().password)
-        console.log(this.userInfo);
+       firebase.default.database().ref('/users/' + userId).once('value').then( userProfile =>{
+      this.userInfo = new Buyer(userProfile.val().name,userProfile.val().surname,userProfile.val().email,userProfile.val().age, userProfile.val().cellNo,userProfile.val().password)
+      console.log(this.userInfo); 
+     return  this.userInfo;
+       
    
         })
        } else {
