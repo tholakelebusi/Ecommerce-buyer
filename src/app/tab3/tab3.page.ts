@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Buyer} from '../buyer';
+import { BuyerServService } from '../buyer-serv.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +10,22 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  userProfile:any;
+  isLoggedIn : any;
+  constructor(public logoutService:BuyerServService,private router:Router) {}
+  ngOnInit(): void { 
+    
+    this.userProfile = this.logoutService.getCurrentUser()
+   console.log(this.userProfile);
+
+  }
+
+  logout(){
+    console.log("loggin out");
+    
+    this.logoutService.logout()
+    this.router.navigateByUrl("/login")
+
+  }
 
 }
