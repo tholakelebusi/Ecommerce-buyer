@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col  *ngFor="let bag of bags" size="0">
+      <ion-col  *ngFor="let bag of bags" >
         <ion-card>
           <ion-card-header>
             <img src={{bag.productPic}} class="photo">
@@ -20,7 +20,7 @@
             </ion-item>
             <ion-item>
               <ion-card-subtitle> {{bag.productPrice}}</ion-card-subtitle>
-              <ion-button expand="block" fill="outline" routerLink="/tab2" click="getBagList()">Add to cart</ion-button>
+              <ion-button expand="block" fill="outline" routerLink="/tab2" click="addToCart(product)">Add to cart</ion-button>
             </ion-item>
           </ion-card-content>
         </ion-card>

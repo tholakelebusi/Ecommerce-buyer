@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {BuyerServService} from '../buyer-serv.service'
+import {SalesService} from '../sales.service'
 
 @Component({
   selector: 'app-tab1',
@@ -9,10 +10,12 @@ import {BuyerServService} from '../buyer-serv.service'
 export class Tab1Page {
 
   bags:any
-  constructor(public bagService:BuyerServService) { }
+  cart:any
+  constructor(public bagService:BuyerServService,private sales:SalesService) { }
 
   ngOnInit() {
     this.getBagList()
+    this.sales.getCart()
   }
 
   getBagList()
@@ -20,6 +23,20 @@ export class Tab1Page {
     this.bags=this.bagService.getProducts()
   }
 
+  addToCart(product) {
+    // console.log(product);
+    let id = product.id
+    let userId = localStorage.getItem('userID')
+    this.cart = {
+      userID: userId,
+      quantity: 1,
+      product
+    }
+    console.log(this.cart);
+
+    this.sales.addCart(this.cart)
+
+  }
 }
 
 
