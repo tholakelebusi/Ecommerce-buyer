@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import * as firebase from 'firebase';
+import firebase from 'firebase';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Buyer } from './buyer';
 import { Bags } from './bags'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BuyerServService {
 
+  
  // userInfor: Buyer
   selectedProduct: Bags
   userInfo: Buyer;
-  constructor(private db: AngularFirestore, public afAuth: AngularFireAuth) { }
+  constructor(private db: AngularFirestore, public afAuth: AngularFireAuth,private router:Router) { }
 
   signUpUser(user) {
-    var database = firebase.default.database();
+    var database = firebase.database();
 
     let message = ""
-    firebase.default.auth().createUserWithEmailAndPassword(user.email, user.password).catch((error) => {
+    firebase.auth().createUserWithEmailAndPassword(user.email, user.password).catch((error) => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -30,7 +32,7 @@ export class BuyerServService {
 
       if (results) {
         message = "successfully registered"
-        firebase.default.database().ref('buyer/' + results.user.uid).set({
+        firebase.database().ref('buyer/' + results.user.uid).set({
           name: user.name,
           email: user.email,
           surname: user.surname,
@@ -52,7 +54,7 @@ export class BuyerServService {
     let user: any
     let message = "";
 
-    firebase.default.auth().signInWithEmailAndPassword(email, password).catch((error) => {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -64,6 +66,7 @@ export class BuyerServService {
       user = result
 
       if (user) {
+        
         message = user.user.email + " has successfully logged in"
         localStorage.setItem('userID', user.user.uid);
         console.log(localStorage.getItem('userID'));
@@ -79,7 +82,7 @@ export class BuyerServService {
   }
 
   resetPassword(email: string) {
-    var auth = firebase.default.auth();
+    var auth = firebase.auth();
     return auth.sendPasswordResetEmail(email)
       .then(() => console.log("email sent"))
       .catch((error) => console.log(error))
@@ -131,58 +134,65 @@ export class BuyerServService {
   }
 
 
-
   logout() {
-    firebase.default.auth().signOut().then(() => {
+    firebase.auth().signOut().then(() => {
       // Sign-out successful.
       console.log("Sign-out successful.");
-
+      localStorage.removeItem('userID')
+      
+      //this.router.navigateByUrl("/login")
     }).catch(function (error) {
       console.log(error);
+      this.router.navigateByUrl("/tabs/tab3")
 
     });
 
   }
 
   //    this.userInfo = new Authenticate(userProfile.val().name,userProfile.val().surname,userProfile.val().email,userProfile.val().age, userProfile.val().cellNo);
-  // getCurrentUser(){
+  getCurrentUser(){
    
-  //   firebase.default.auth().onAuthStateChanged((user) =>{
-  //     if (user) {
-  //       console.log(user)
-  //       var userId = user.uid;
-  //      firebase.default.database().ref('/users/' + userId).once('value').then( userProfile =>{
-  //     this.userInfo = new Buyer(userProfile.val().name,userProfile.val().surname,userProfile.val().email,userProfile.val().age, userProfile.val().cellNo,userProfile.val().password)
-  //     console.log(this.userInfo); 
-  //    //return  this.userInfo;
+    firebase.auth().onAuthStateChanged((user) =>{
+      if (user) {
+        console.log(user)
+        var userId = user.uid;
+       firebase.database().ref('/users/' + userId).once('value').then( userProfile =>{
+      this.userInfo = new Buyer(userProfile.val().name,userProfile.val().surname,userProfile.val().email,userProfile.val().age, userProfile.val().cellNo,userProfile.val().password)
+      console.log(this.userInfo); 
+     //return  this.userInfo;
        
    
-  //       })
-  //      } else {
-  //       console.log("user not logged in");
+        })
+       } else {
+        console.log("user not logged in");
         
-  //   }
-  //   });
+    }
+    });
   
     
     
-  // }
+  }
 
-  getCurrentUser(){
-    firebase.default.auth().onAuthStateChanged((user) =>{
-       if (user) {
-         var userId = user.uid;
-        firebase.default.database().ref('buyer/' + userId).once('value').then( userProfile =>{
-           this.userInfo = new Buyer(userProfile.val().name,userProfile.val().surname,userProfile.val().email,userProfile.val().age, userProfile.val().cellNo,userProfile.val().password)
-           return this.userInfo
-           console.log(this.userInfo);
-         
-         })
-       } else {
-         console.log("user not logged in");
-       }
-     }); 
-   }
+  
+
+    
+    
+  
+  // getCurrentUser() {
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //     if (user) {
+  //       var userId = user.uid;
+  //       firebase.database().ref('/buyer/' + userId).once('value').then(userProfile => {
+  //         this.userInfo = new Buyer(userProfile.val().name, userProfile.val().surname, userProfile.val().email,userProfile.val().age, userProfile.val().cellNo)
+  //         console.log("userInfo ===" , this.userInfo.email);
+  //          return this.userInfo
+  //       })
+  //     } else {
+  //       console.log("user not logged in");
+
+  //     }
+  //   });
+  // }
 
 
 

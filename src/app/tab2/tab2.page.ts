@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Buyer} from '../buyer';
-import { BuyerServService } from '../buyer-serv.service';
+import {SalesService} from '../sales.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,19 +10,20 @@ import { Router } from '@angular/router';
 })
 export class Tab2Page {
 
-  selectedBag: any;
-  product
-  constructor(private router: Router,private BagService:BuyerServService) {
-    this.product = history.state
+  salesBag:any;
+
+  constructor(private router: Router,private salesService:SalesService) {
+ 
   }
   ngOnInit(): void {
-    this.selectedBag = this.BagService.selectedProduct
   }
 
 
 
-  viewinfo(product) {
-    this.router.navigateByUrl('/tab2', { state: product });
-  }
+addedtocart()
+{
+  this.salesBag = this.salesService.getCart()
+  console.log(this.salesBag)
+}
 
 }

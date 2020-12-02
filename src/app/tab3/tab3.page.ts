@@ -11,26 +11,24 @@ import { Router } from '@angular/router';
 })
 export class Tab3Page {
 
-  userProfile;
+  cellNo
+  userProfile
+  constructor(public autheService:BuyerServService, public router:Router) { }
 
-  
-  constructor(public logoutService:BuyerServService,private router:Router) {}
-
-  ngOnInit(): void { 
- this.userProfile =this.logoutService.userInfo
-
-   console.log(this.userProfile );
-
+  ngOnInit(): void {
+    this.userProfile = this.autheService.userInfo;
+    this.autheService.getCurrentUser()
+    console.log(this.autheService.getCurrentUser());
   }
-
-
 
   logout(){
     console.log("loggin out");
     
-    this.logoutService.logout()
+    this.autheService.logout()
     this.router.navigateByUrl("/login")
 
   }
 
 }
+
+

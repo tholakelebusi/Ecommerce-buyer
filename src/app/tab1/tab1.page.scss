@@ -1,10 +1,11 @@
 ion-grid
 {
-  background-image: url("https://i.pinimg.com/originals/99/cb/1b/99cb1b953a055f936e1daed9385a848b.jpg");
+  //@at-root: url("https://www.xmple.com/wallpaper/hexagon-drop-shadow-brown-beehive-white-1920x1080-c2-cd853f-ffffff-l4-28-338-33-15-a2-10-50-f-7.svg");
+  //background-color: #CD853F;
 }
 ion-icon
 {
-  color:#85144b;
+  color:#CD853F;
   font-size: 35px;
   font-weight: bolder;
  background-color: transparent;
@@ -40,8 +41,9 @@ ion-card
 ion-title
 {
 
-//  text-align: center;
-//  font-style: italic;
-//  font-weight: lighter;
-//  font-size: 2cm;
+ text-align: center;
+ font-style: italic;
+ font-weight: lighter;
+ font-size: 2cm;
+ color:#CD853F;
 }

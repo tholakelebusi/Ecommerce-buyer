@@ -18,14 +18,22 @@ export class Tab1Page {
     this.sales.getCart()
   }
 
+
+
+
   getBagList()
   {
     this.bags=this.bagService.getProducts()
   }
 
+
+
+
+
+
   addToCart(product) {
-    // console.log(product);
-    let id = product.id
+    console.log(product);
+   let id = product.id
     let userId = localStorage.getItem('userID')
     this.cart = {
       userID: userId,

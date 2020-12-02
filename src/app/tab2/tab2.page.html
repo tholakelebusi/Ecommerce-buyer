@@ -1,40 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Genuine Bags
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col  *ngFor="let bag of salesBag" >
+        <ion-card>
+          <ion-card-header>
+            <img src={{bag.productPic}} class="photo">
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-card-title> {{bag.productName}}</ion-card-title>
+            </ion-item>
+            <ion-item>
+              <ion-card-subtitle> {{bag.productPrice}}</ion-card-subtitle>
+            
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
 
-  <app-explore-container name="Tab 2 page" ></app-explore-container>
-  <div *ngIf="viewpage">
-    <mat-card class="example-card">
-      <mat-card-header>
-        
-        <img src="{{selectedBag.productPic}}" class="photo">
-        <mat-card-title>{{selectedBag.productName}}</mat-card-title>
-        <mat-card-subtitle>{{selectedBag.productPrice}} </mat-card-subtitle>
-        <mat-card-subtitle class="decsribe">{{selectedBag.productDescrip}}</mat-card-subtitle>
-      </mat-card-header>
-  
-      <mat-card-header>
-  
-        <mat-card-subtitle>
-          <h4>{{selectedBag.sizes}}</h4>
-        </mat-card-subtitle>
-  
-      </mat-card-header>
-    
-      <button mat-raised-button  routerLink="/update">Update</button>
-    
-      <button mat-raised-button  routerLink="/" (click)=deleting()>Delete</button>
-    </mat-card>
-  </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+
 </ion-content>
