@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Buyer} from '../buyer';
 import { BuyerServService } from '../buyer-serv.service';
 
+
 @Component({
   selector: 'app-registar',
   templateUrl: './registar.page.html',
@@ -27,5 +28,7 @@ export class RegistarPage implements OnInit {
     this.user = new Buyer(this.name, this.surname, this.email,this.age,this.cellNo,this.password);
     console.log(this.user);
     this.buyerService.signUpUser(this.user)
+  
+    // this.router.navigateByUrl("/home");
   }
 }
