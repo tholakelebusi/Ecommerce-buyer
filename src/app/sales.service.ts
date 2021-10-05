@@ -18,7 +18,7 @@ export class SalesService {
 
   getCart() {
     this.db.collection('cart', ref => ref.where('userID', '==', this.userID) ).valueChanges().subscribe(val =>{
-       console.log(val);
+       console.log("addede"+val);
      })
     
   }

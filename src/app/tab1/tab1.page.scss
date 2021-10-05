@@ -1,8 +1,4 @@
-ion-grid
-{
-  //@at-root: url("https://www.xmple.com/wallpaper/hexagon-drop-shadow-brown-beehive-white-1920x1080-c2-cd853f-ffffff-l4-28-338-33-15-a2-10-50-f-7.svg");
-  //background-color: #CD853F;
-}
+
 ion-icon
 {
   color:#CD853F;
@@ -46,4 +42,14 @@ ion-title
  font-weight: lighter;
  font-size: 2cm;
  color:#CD853F;
+}
+ion-card-subtitle
+{
+  color: black;
+  background-color:white;
+}
+
+ion-card-title
+{
+  color:black;
 }

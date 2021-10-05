@@ -16,6 +16,7 @@ export class Tab2Page {
  
   }
   ngOnInit(): void {
+    this.addedtocart();
   }
 
 

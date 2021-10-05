@@ -6,6 +6,9 @@ import { Buyer } from './buyer';
 import { Bags } from './bags'
 import { Router } from '@angular/router';
 
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +18,10 @@ export class BuyerServService {
  // userInfor: Buyer
   selectedProduct: Bags
   userInfo: Buyer;
-  constructor(private db: AngularFirestore, public afAuth: AngularFireAuth,private router:Router) { }
+  constructor(private db: AngularFirestore, 
+    public afAuth: AngularFireAuth,
+    private router:Router,
+    ) { }
 
   signUpUser(user) {
     var database = firebase.database();
@@ -31,7 +37,7 @@ export class BuyerServService {
       console.log(results);
 
       if (results) {
-        message = "successfully registered"
+    
         firebase.database().ref('buyer/' + results.user.uid).set({
           name: user.name,
           email: user.email,
@@ -41,6 +47,7 @@ export class BuyerServService {
 
         });
         console.log(message);
+      
 
       } else {
 
@@ -175,24 +182,7 @@ export class BuyerServService {
 
   
 
-    
-    
   
-  // getCurrentUser() {
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     if (user) {
-  //       var userId = user.uid;
-  //       firebase.database().ref('/buyer/' + userId).once('value').then(userProfile => {
-  //         this.userInfo = new Buyer(userProfile.val().name, userProfile.val().surname, userProfile.val().email,userProfile.val().age, userProfile.val().cellNo)
-  //         console.log("userInfo ===" , this.userInfo.email);
-  //          return this.userInfo
-  //       })
-  //     } else {
-  //       console.log("user not logged in");
-
-  //     }
-  //   });
-  // }
 
 
 

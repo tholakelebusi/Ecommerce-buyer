@@ -23,9 +23,13 @@ export class LoginPage implements OnInit {
   login() {
     this.loginserv.signInUser(this.email, this.password)
     this.loggonInUser = this.loginserv.signInUser
-    //this.router.navigateByUrl("/tabs/tab3")
+
+
+    this.router.navigateByUrl("/tabs/tab1")
 
   }
+
+
   resetpassword()
   {
     this.router.navigateByUrl("/resetpassword")
