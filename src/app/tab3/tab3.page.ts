@@ -16,9 +16,9 @@ export class Tab3Page {
   constructor(public autheService:BuyerServService, public router:Router) { }
 
   ngOnInit(): void {
-    this.userProfile = this.autheService.userInfo;
-    this.autheService.getCurrentUser()
-    console.log(this.autheService.getCurrentUser());
+    this.userProfile = this.autheService.getCurrentUser();
+   this.cellNo=localStorage.getItem("username");
+    
   }
 
   logout(){
@@ -26,7 +26,7 @@ export class Tab3Page {
     
     this.autheService.logout()
     this.router.navigateByUrl("/login")
-
+localStorage.removeItem("username");
   }
 
 }

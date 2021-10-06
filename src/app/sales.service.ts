@@ -16,24 +16,54 @@ export class SalesService {
 
   }
 
-  getCart() {
-    this.db.collection('cart', ref => ref.where('userID', '==', this.userID) ).valueChanges().subscribe(val =>{
-       console.log("addede"+val);
+  items:any;
+  getCartd() {
+    this.db.collection("cart", ref => ref.where('userID', '==', this.userID) ).snapshotChanges().subscribe(val =>{
+      this.items=val;
+
      })
-    
+    return this.items
   }
+
+
+
+  product: any = []
+  getCart() {
+    this.db.collection("cart", ref => ref.where('userID', '==', this.userID) ).snapshotChanges().subscribe(results => {
+      results.forEach((doc) => {
+        this.product.push(doc.payload.doc.data())
+        this.product.map(prod => {
+          prod['id'] = doc.payload.doc.id;
+        })
+        // console.log(this.product);
+      });
+    });
+    return this.product
+  }
+
+
+
 
   addCart(product) {
      console.log(product);
 
     this.db.collection("cart").add(product).then(results => {
-      console.log("added");
     }
     ).catch(err => {
       console.log(err);
     })
 
 
+  }
+
+  delete(id:any)
+  {
+  
+  this.db.collection("cart").doc(id).delete().then(function() {
+    console.log("Document successfully deleted!!");
+ }).catch(function(error) {
+   console.error("Error removing document: ", error);
+});
   }
 
 

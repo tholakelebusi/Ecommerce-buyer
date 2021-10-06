@@ -24,6 +24,8 @@ export class Tab1Page {
   getBagList()
   {
     this.bags=this.bagService.getProducts()
+   
+    
   }
 
 

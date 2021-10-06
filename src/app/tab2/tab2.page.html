@@ -9,18 +9,19 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
+     
       <ion-col  *ngFor="let bag of salesBag" >
         <ion-card>
           <ion-card-header>
-            <img src={{bag.productPic}} class="photo">
+            <img src={{bag.product.productPic}} class="photo">
           </ion-card-header>
           <ion-card-content>
             <ion-item>
-              <ion-card-title> {{bag.productName}}</ion-card-title>
+              <ion-card-title> {{bag.product.productName}}</ion-card-title>
             </ion-item>
             <ion-item>
-              <ion-card-subtitle> {{bag.productPrice}}</ion-card-subtitle>
-            
+              <ion-card-subtitle>R {{bag.product.productPrice}}</ion-card-subtitle>
+            <ion-button (click)="delete(bag.product.id)"><ion-icon name="close-circle-outline"></ion-icon></ion-button>
             </ion-item>
           </ion-card-content>
         </ion-card>

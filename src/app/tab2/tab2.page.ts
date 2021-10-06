@@ -16,15 +16,22 @@ export class Tab2Page {
  
   }
   ngOnInit(): void {
-    this.addedtocart();
+    this.salesBag = this.salesService.getCart();
+    console.log(this.salesBag)
   }
 
+// addedtocart()
+// {
+//   this.salesBag = this.salesService.getCart();
+//     console.log(this.salesBag)
+//   this.router.navigateByUrl("/tabs/tab2")
+// }
 
 
-addedtocart()
+delete(id:any)
 {
-  this.salesBag = this.salesService.getCart()
-  console.log(this.salesBag)
-}
 
+  this.salesService.delete(id);
+console.log(id);
+}
 }

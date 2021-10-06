@@ -16,15 +16,16 @@ export class LoginPage implements OnInit {
   constructor(public loginserv: BuyerServService, public router: Router) { }
 
   ngOnInit(): void {
- 
+  
 
   }
 
   login() {
+ 
     this.loginserv.signInUser(this.email, this.password)
     this.loggonInUser = this.loginserv.signInUser
 
-
+localStorage.setItem("username",this.email)
     this.router.navigateByUrl("/tabs/tab1")
 
   }
