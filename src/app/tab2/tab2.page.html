@@ -21,8 +21,8 @@
             </ion-item>
             <ion-item>
               <ion-card-subtitle>R {{bag.product.productPrice}}</ion-card-subtitle>
-              <!-- <h2>{{bag.product.id}}</h2> -->
-            <ion-button (click)="delete(bag.id)"><ion-icon name="close-circle-outline"></ion-icon></ion-button>
+
+          <ion-icon name="close-outline" id="cross" (click)="delete(bag.id)"></ion-icon>
             </ion-item>
           </ion-card-content>
         </ion-card>
