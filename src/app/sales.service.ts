@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -45,7 +46,7 @@ export class SalesService {
 
 
   addCart(product) {
-     console.log(product);
+   
 
     this.db.collection("cart").add(product).then(results => {
     }
@@ -58,12 +59,14 @@ export class SalesService {
 
   delete(id:any)
   {
-  
-  this.db.collection("cart").doc(id).delete().then(function() {
-    console.log("Document successfully deleted!!");
- }).catch(function(error) {
-   console.error("Error removing document: ", error);
-});
+
+    this.db.collection('cart').doc(id).delete().then(function() {
+        console.log("Document successfully deleted!!");
+       
+    }).catch(function(error) {
+      console.error("Error removing document: ", error);
+    });
+
   }
 
 

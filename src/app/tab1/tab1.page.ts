@@ -15,7 +15,6 @@ export class Tab1Page {
 
   ngOnInit() {
     this.getBagList()
-    this.sales.getCart()
   }
 
 
@@ -42,7 +41,7 @@ export class Tab1Page {
       quantity: 1,
       product
     }
-    console.log(this.cart);
+   
 
     this.sales.addCart(this.cart)
 
