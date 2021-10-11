@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,} from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
+  cartCount:any;
   constructor() {}
+
+  ngOnInit(): void {
+    this.cartCount= localStorage.getItem('cart');
+    console.log(this.cartCount);
+    
+  }
 
 }

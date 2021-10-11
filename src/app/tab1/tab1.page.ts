@@ -44,7 +44,7 @@ export class Tab1Page {
    
 
     this.sales.addCart(this.cart)
-
+window.location.reload();
   }
 }
 

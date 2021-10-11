@@ -12,19 +12,19 @@ export class Tab2Page {
 
   salesBag:any;
 
+
   constructor(private router: Router,private salesService:SalesService) {
  
   }
   ngOnInit(): void {
     this.addedtocart();
     this.delete;
- 
+
   }
 
 addedtocart()
 {
   this.salesBag = this.salesService.getCart();
-    console.log(this.salesBag)
   this.router.navigateByUrl("/tabs/tab2")
 }
 
@@ -32,7 +32,7 @@ addedtocart()
 delete(id:string)
 {
   this.salesService.delete(id);
-  this.router.navigate(["/tabs/tab2"])
+window.location.reload();
 
 }
 }

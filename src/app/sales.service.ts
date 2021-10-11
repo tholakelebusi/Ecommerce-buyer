@@ -29,14 +29,17 @@ export class SalesService {
 
 
   product: any = []
+
+
   getCart() {
     this.db.collection("cart", ref => ref.where('userID', '==', this.userID) ).snapshotChanges().subscribe(results => {
+    localStorage.setItem("cart",results.length.toString());
       results.forEach((doc) => {
         this.product.push(doc.payload.doc.data())
         this.product.map(prod => {
           prod['id'] = doc.payload.doc.id;
         })
-        // console.log(this.product);
+
       });
     });
     return this.product
@@ -68,6 +71,8 @@ export class SalesService {
     });
 
   }
+
+
 
 
 }
