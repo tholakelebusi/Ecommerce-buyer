@@ -8,10 +8,15 @@
     </ion-tab-button>
 
     <ion-tab-button tab="tab2">
-      <strong class="fa-stack-1x text-primary">{{cartCount}}</strong>
-      <ion-icon name="cart" tab="tab2"></ion-icon>
-     
+      
+      <strong class="fa-stack-1x text-primary"></strong>
+      <ion-icon name="cart" tab="tab2" CssClass="badge badge-warning" style="font-size: 25px"></ion-icon>
+   
+     <span class="badge badge-notify" >{{cartCount}}
+    </span>
+    
     </ion-tab-button>
+   
 
     <span class="fa-stack fa-3x">
 
