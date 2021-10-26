@@ -1,36 +1,86 @@
-
-
 ion-card
 {
     color:white;
     font-weight: bolder;
-    width: 8cm;
-    height: 13cm;
-    background-image: url("https://cdn.pixabay.com/photo/2017/10/29/17/31/online-2900303__340.jpg");
+ 
     background-position: 100%;
     position:center;
     text-align: center;
-    
 }
+
+.myview {
+ //background-image: url("../../img/letsstart.jpg");
+ //background-image: url("https://cdn.vox-cdn.com/thumbor/xzXrJdg2jOJzd_s4-qXp4wEpp-0=/0x0:1566x1638/1200x800/filters:focal(905x1226:1155x1476)/cdn.vox-cdn.com/uploads/chorus_image/image/66588041/Screenshot_2020_04_01_at_11.51.04_AM.0.png");
+color: yellow;
+background-color: yellowgreen;
+
+}
+
+
+$white-color:transparent;
+$height100: 100%;
+$background-image:url("https://cdn.vox-cdn.com/thumbor/xzXrJdg2jOJzd_s4-qXp4wEpp-0=/0x0:1566x1638/1200x800/filters:focal(905x1226:1155x1476)/cdn.vox-cdn.com/uploads/chorus_image/image/66588041/Screenshot_2020_04_01_at_11.51.04_AM.0.png");
+
+
+
+
+
+
 ion-button {
     font-weight: 200;
     background-color:#CC9900;
-    border-radius: 100%;
+   
     width: 32;
 }
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: $white-color;
+    }
+    ion-col {
+        border: none;
+    }
+}
+
+.letsstart
+{
+    color: yellowgreen;
+    background-color: yellowgreen;
+}
 a{
-    color:white;
+    color:black;
     font-weight: bolder;
     font-variant: small-caps;
 }
+ion-grid
+{
+   color:black;
+}
 ion-card-title
 {
-
-    color: white;
+    margin-left: -4cm;
+    color:black;
+    margin-left: 8%;
 }
 
+ion-input
+{
+    color:black;
+    background-color: white;
+}
+
+img
+{
+    width:2cm;
+    height:2cm;
+
+
+}
 ion-icon
 {
-    height: 2cm;
-    width: 1cm;
+  color:#CC9900;
+  font-size: 35px;
+  font-weight: bolder;
+ background-color: transparent;
+ margin-left: 42%;
 }

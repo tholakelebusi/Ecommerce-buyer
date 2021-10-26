@@ -16,14 +16,14 @@
             <img src={{bag.product.productPic}} class="photo">
           </ion-card-header>
           <ion-card-content>
-            <ion-item>
+          
               <ion-card-title> {{bag.product.productName}}</ion-card-title>
-            </ion-item>
-            <ion-item>
+       
               <ion-card-subtitle>R {{bag.product.productPrice}}</ion-card-subtitle>
+         
 
-          <ion-icon name="close-outline" id="cross" (click)="delete(bag.id)"></ion-icon>
-            </ion-item>
+          <ion-icon name="trash" id="cross" (click)="delete(bag.id)"></ion-icon>
+         
           </ion-card-content>
         </ion-card>
 

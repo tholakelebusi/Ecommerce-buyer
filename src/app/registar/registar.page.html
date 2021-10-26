@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
      <ion-title>Register</ion-title>
-	 <ion-icon name="bag-handle-outline" routerLink="/"></ion-icon> 
+
   </ion-toolbar>
 </ion-header>
 
@@ -13,11 +13,12 @@
 <ion-header>
  
   </ion-header>
-  <ion-content>
+
   <ion-card> 
   <ion-card-header>
   <ion-card-subtitle></ion-card-subtitle>
   <ion-card-title>Registration Form</ion-card-title>
+  <img src="../assets/imag/MaBe-logos.jpeg" alt="centered image">
   </ion-card-header>
   <ion-card-content>
 	
@@ -64,15 +65,21 @@
 					
 								
 							
-									<a routerLink="/login" >Already a Member</a>
+							
 								 
 								
 			</form>
 		</ion-item>
 		<ion-button  (click)="signUp()" type="submit"  id="btnn" size="medium"  expand="block" color="teal">Register</ion-button>
-		<br>
-		<a routerLink="/login">Already a Member</a>
+		<a routerLink="/login" >Already a Member</a>
   </ion-card-content>
   </ion-card>
-  </ion-content>
+
+  <ion-footer>
+	<ion-toolbar>
+		
+	  <ion-title> <ion-icon name="home" routerLink="/"></ion-icon> </ion-title>
+	</ion-toolbar>
+  </ion-footer>
+ 
 </ion-content>

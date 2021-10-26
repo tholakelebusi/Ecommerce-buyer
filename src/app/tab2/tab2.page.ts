@@ -19,20 +19,36 @@ export class Tab2Page {
   ngOnInit(): void {
     this.addedtocart();
     this.delete;
-
+    this.sumOfIncome()
+  
   }
 
 addedtocart()
 {
+ 
   this.salesBag = this.salesService.getCart();
+
   this.router.navigateByUrl("/tabs/tab2")
+console.log(this.salesBag);
+
+
 }
 
 
 delete(id:string)
 {
-  this.salesService.delete(id);
-window.location.reload();
 
+  this.salesService.delete(id);
+
+this.router.navigateByUrl("/tabs/tab2")
+
+}
+
+
+sumOfIncome(){
+   console.log("sum"+this.salesBag.map(t => t.price).reduce((a , b) => a + b, 0));
+  return this.salesBag.map(t => t.price).reduce((a , b) => a + b, 0);
+
+     
 }
 }

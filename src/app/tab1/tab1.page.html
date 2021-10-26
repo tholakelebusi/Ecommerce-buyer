@@ -1,27 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Genuine Bags
+      MABe bAGS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid>
-    <ion-row>
-      <ion-col  *ngFor="let bag of bags" >
+
+
+
+  <ion-grid >
+    <ion-row size="12" size-md="10" size-lg="8" size-xl="6"> 
+      <ion-col  *ngFor="let bag of bags"   >
         <ion-card>
           <ion-card-header>
             <img src={{bag.productPic}} class="photo">
           </ion-card-header>
           <ion-card-content>
-            <ion-item>
+          
               <ion-card-title> {{bag.productName}}</ion-card-title>
-            </ion-item>
-            <ion-item>
+         
               <ion-card-subtitle> R{{bag.productPrice}}</ion-card-subtitle>
               <ion-icon name="cart" (click)="addToCart(bag)"></ion-icon>
-            </ion-item>
+           
           </ion-card-content>
         </ion-card>
 

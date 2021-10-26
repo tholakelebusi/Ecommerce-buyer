@@ -1,8 +1,27 @@
 ion-card
 {
-    width:5cm;
-    height:9cm;
-    padding:1%;
+    // width:5cm;
+    // height:9cm;
+    // padding:1%;
+
+    border-radius: 5px;
+    height: calc((100vh / 4) - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0px 7px 0px rgba(0, 0, 0, 0.2);
+    ion-card-header {
+        height:4cm;
+        width:3cm;
+      ion-card-title {
+  margin-left: 75%;
+      }
+      ion-card-subtitle {
+        text-transform: initial;
+        text-align: center;
+      }
+    }
   
 }
 

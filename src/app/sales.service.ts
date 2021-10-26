@@ -21,6 +21,7 @@ export class SalesService {
   getCartd() {
     this.db.collection("cart", ref => ref.where('userID', '==', this.userID) ).snapshotChanges().subscribe(val =>{
       this.items=val;
+    
 
      })
     return this.items
@@ -34,6 +35,8 @@ export class SalesService {
   getCart() {
     this.db.collection("cart", ref => ref.where('userID', '==', this.userID) ).snapshotChanges().subscribe(results => {
     localStorage.setItem("cart",results.length.toString());
+ 
+    
       results.forEach((doc) => {
         this.product.push(doc.payload.doc.data())
         this.product.map(prod => {
@@ -42,6 +45,7 @@ export class SalesService {
 
       });
     });
+ 
     return this.product
   }
 
