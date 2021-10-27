@@ -18,14 +18,7 @@ export class SalesService {
   }
 
   items:any;
-  getCartd() {
-    this.db.collection("cart", ref => ref.where('userID', '==', this.userID) ).snapshotChanges().subscribe(val =>{
-      this.items=val;
-    
 
-     })
-    return this.items
-  }
 
 
 
@@ -69,6 +62,7 @@ export class SalesService {
 
     this.db.collection('cart').doc(id).delete().then(function() {
         console.log("Document successfully deleted!!");
+        window.location.reload();
        
     }).catch(function(error) {
       console.error("Error removing document: ", error);

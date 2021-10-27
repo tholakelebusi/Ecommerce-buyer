@@ -28,7 +28,7 @@ addedtocart()
  
   this.salesBag = this.salesService.getCart();
 
-  this.router.navigateByUrl("/tabs/tab2")
+ 
 console.log(this.salesBag);
 
 
@@ -37,18 +37,16 @@ console.log(this.salesBag);
 
 delete(id:string)
 {
-
+ 
   this.salesService.delete(id);
-
-this.router.navigateByUrl("/tabs/tab2")
 
 }
 
 
 sumOfIncome(){
-   console.log("sum"+this.salesBag.map(t => t.price).reduce((a , b) => a + b, 0));
-  return this.salesBag.map(t => t.price).reduce((a , b) => a + b, 0);
-
+   console.log("sum")
      
 }
+
+
 }

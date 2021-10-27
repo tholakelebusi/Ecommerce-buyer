@@ -1,9 +1,11 @@
 
 
 ion-content {
-  --background:u("../assets/imag/MaBe-logos.jpeg") no-repeat center center fixed;
+  // --background:u("../assets/imag/MaBe-logos.jpeg") no-repeat center center fixed;
+  --background:url('/assets/imag/MaBe-logos.jpeg') no-repeat ;
 
   background-size: cover;
+  
 }
 ion-icon
 {
@@ -18,17 +20,36 @@ ion-icon
 
 }
 
-.button
+ion-button
 {
+  color:transparent;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+height:2cm;
+width:9cm;
+margin-left: 3%;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+
+  box-shadow: 0 2px 2px #888888;
+
 
   background-color: transparent;
-  color: white;
-padding: 1%;
+  color:transparent;
+
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
 }
 
 ion-content
 {
   margin-top: 2cm;
   padding:5%;
+}
+.buttons
+{
+  margin-top:2.5cm;
 }

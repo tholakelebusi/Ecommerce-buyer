@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {BuyerServService} from '../buyer-serv.service'
 import {SalesService} from '../sales.service'
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-tab1',
@@ -11,14 +12,19 @@ export class Tab1Page {
 
   bags:any
   cart:any
-  constructor(public bagService:BuyerServService,private sales:SalesService) { }
+  constructor(public bagService:BuyerServService,
+    private sales:SalesService,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getBagList()
+this.showToaster
   }
 
 
-
+  showToaster(){
+    this.toastr.success("Hello, I'm the toastr message.")
+}
 
   getBagList()
   {
@@ -44,8 +50,10 @@ export class Tab1Page {
    
 
     this.sales.addCart(this.cart)
-
+    this.toastr.success("Hello, I'm the toastr message.")
   }
+
+  
 }
 
 
