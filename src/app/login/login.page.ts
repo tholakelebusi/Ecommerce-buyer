@@ -26,7 +26,8 @@ export class LoginPage implements OnInit {
     this.loggonInUser = this.loginserv.signInUser
 
 localStorage.setItem("username",this.email)
-    this.router.navigateByUrl("/tabs/tab1")
+    this.router.navigateByUrl("/tabs/tabs/tab1");
+    
 
   }
 

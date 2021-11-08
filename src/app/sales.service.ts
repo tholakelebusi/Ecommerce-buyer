@@ -23,6 +23,7 @@ export class SalesService {
 
 
   product: any = []
+  total:any;
 
 
   getCart() {
@@ -34,6 +35,7 @@ export class SalesService {
         this.product.push(doc.payload.doc.data())
         this.product.map(prod => {
           prod['id'] = doc.payload.doc.id;
+    
         })
 
       });
@@ -71,6 +73,9 @@ export class SalesService {
   }
 
 
-
+getTotal()
+{
+this.getCart().reduce((i,j)=>i+j.price,0);
+}
 
 }

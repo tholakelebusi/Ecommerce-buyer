@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {BuyerServService} from '../buyer-serv.service'
 import {SalesService} from '../sales.service'
-import { ToastrService } from 'ngx-toastr';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -14,7 +14,7 @@ export class Tab1Page {
   cart:any
   constructor(public bagService:BuyerServService,
     private sales:SalesService,
-    private toastr: ToastrService) { }
+    public toastController: ToastController) { }
 
   ngOnInit() {
     this.getBagList()
@@ -22,9 +22,17 @@ this.showToaster
   }
 
 
-  showToaster(){
-    this.toastr.success("Hello, I'm the toastr message.")
-}
+  async showToaster()
+  {
+      const toast = await this.toastController.create({
+        message: 'Your item has been added to cart.',
+        duration: 2000
+      });
+      toast.present();
+    }
+
+  
+
 
   getBagList()
   {
@@ -48,9 +56,9 @@ this.showToaster
       product
     }
    
-
+this.showToaster();
     this.sales.addCart(this.cart)
-    this.toastr.success("Hello, I'm the toastr message.")
+
   }
 
   
